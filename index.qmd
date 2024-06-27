@@ -1,12 +1,12 @@
 ---
-title: A title
-subtitle: A subtitle
+title: Simulation-Based Publication Bias Assessement
+subtitle: OSI Fellowship
 format: clean-revealjs
 html-math-method:
   method: mathjax
   url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
 author:
-  - name: Your Name
+  - name: Luca Schnatz
     orcid: 0000-0000-0000-0000
     email: alias@email.com
     affiliations: Your Institution
