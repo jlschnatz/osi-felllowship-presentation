@@ -1,37 +1,37 @@
 ---
 title: Simulation-Based Publication Bias Assessement
-subtitle: OSI Fellowship Ceremony 2024
+subtitle: _OSI Fellowship Ceremony 2024_
 format: clean-revealjs
 html-math-method:
   method: mathjax
   url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
 author:
-  - name: Luca Schnatz
+  - name: Luca Schnatz [{{< fa brands github >}}](https://github.com/jlschnatz) [{{< fa brands x-twitter >}}](https://x.com/jlschnatz) 
     email: schnatz@psych.uni-frankfurt.de
-    affiliations: Department of Psychological Methods with Interdisciplinary Focus
-header-logo: img/goethe-logo.svg
+    affiliations: Department of Psychological Methods with Interdisciplinary Focus 
+header-logo: img/logos_header.png
 slide-number: true
 fig-cap-location: margin
 cap-location: margin
 bibliography: references.bib
 csl: apa.csl
-title-slide-attributes: 
-  data-background-image: img/osi.png
-  data-background-size: 23%
-  data-background-position: 80% 60%
+callout-appearance: default
+css: logo.css
+callout-icon: false
 filters:
   - reveal-header
 date: 07-03-2024
 ---
 
-
-## Exemplifying Data
+## Background
 
 ### Comparing the Standard Literature against Registered Reports
 
+Exemplifying data by @scheel2021excess
+
 ::: {style="text-align:center;font-size:0.8em; color:grey;"}
 
-![Data from: @scheel2021excess](img/scheel_etal_2021.png){fig-align="center" width="60%" fig-alt="Data of Scheel et al. (2021) indicating that 96% of the standard literature, the first hypothesis is supported, while only 44% is supported in publication bias absent registered reports."}
+![](img/scheel_etal_2021.png){fig-align="center" width="50%" fig-alt="Data of Scheel et al. (2021) indicating that 96% of the standard literature, the first hypothesis is supported, while only 44% is supported in publication bias absent registered reports."}
 
 :::
 
@@ -39,82 +39,73 @@ date: 07-03-2024
 
 ### Relevance for Open Science
 
-
 *Publication bias leads to...*
 
 - Inflation of meta-analytical effect sizes [@franco2014publication]
-- Increased false-positive rate
+- Increased false-positive rate [@kicinski2014does]
 
 &rarr; Publication bias threatens the validity of science and is a significant driver of the **replication crisis** in psychology [@munafo2017manifesto]
 
-## Current Practices & Their Limitations
+## Background
+### Existing Methods to Assess Publication Bias
+
+General classification into:
+
+- Methods based on the relationship between effect size and sample size in meta-analyses (*small-study effects*) 
+- Methods working with *p*-values
+
+
+## Background
+### Criticisms of existing Methods
+
+- Small-study effects methods: lack of an *explicit* model for publication bias &rarr; only indirect approach to assess publication bias
+- Publication bias is not the only factor influencing the distribution of effect size and sample size &rarr; *sample size planning*
+- Several simulation studies show that many existing methods perform poorly in realistic empirical meta-analytical scenarios: 
+  - Effect size heterogeneity
+  - Additional *p*-hacking and other QRPs
+  - Limited number of individual studies included in the meta-analysis
+  - Severity of publication bias
 
 ## Introducing SPEEC
 
+&rarr; Explicit modeling framework to assess publication bias with ability to account for relevant discussed factors in the context of publication bias 
+
+::: {.incremental}
+
 - **SPEEC**: **S**imulation-based **P**ublication Bias **E**stimation and **E**ffect Size **C**orrection
-- Main Idea: Explicit modelling of the generative process of publication bias in a simulation framework 
+- Main Idea
+  - Explicit modelling of the generative process of publication bias in a simulation framework 
+  - Iteratively comparing the "closeness" of the simulated joint effect size sample size distributions with the empirical meta-analytical data to estimate the parameters of the method
+
+:::
+
 
 ## SPEEC Worklow
 
-:::: {.columns}
-
-::: {.column width="40%"}
-
-1. Simulate samples from joint distribution of effect size and sample size
-2. 
-3. 
-4. 
-
-:::
-
-::: {.column width="60%"}
-
-![](img/speec_workflow.png)
-
-:::
-
-::::
+![](img/speec_workflow.png){fig-align="center"}
 
 
 ## Preliminary Assessement of SPEEC
+
+- Proof of concept study
+- Utilisation of secondary data [@linden2021heterogeneity] with 150 classical meta-analyses and 57 registered replication reports
+- Confirmatory results suggested problems within the parameter estimation of SPEEC
+- Exploratory results aimed to identify potential root causes of estimation problems
+  - Unaccounted between-study effect size heterogeneity in the simulation framework
 
 ## Outlook
 
 ### Nexts Steps
 
-Interested in further detailes see [thesis](https://raw.githubusercontent.com/jlschnatz/bachelor-thesis/master/manuscript/thesis-schnatz_submitted.pdf)
-
-<i class="fa-brands fa-github"></i>
-
+Interested in further details see [thesis](https://raw.githubusercontent.com/jlschnatz/bachelor-thesis/master/manuscript/thesis-schnatz_submitted.pdf)
 
 - Account for between-study effect size heterogeneity in the simulation framework
 - Conduct thorough simulation study to assess SPEEC
 - Include other factors that are influencing the joint distribution of effect size and sample size (such as sample size planning, p-hacking, etc.)
 - What I will do with the money: DGPS 2024 
 
-
-## Additional theme classes
-
-### Some extra things you can do with the clean theme
-
-Special classes for emphasis
-
-- `.alert` class for default emphasis, e.g. [important note]{.alert}.
-- `.fg` class for custom colour, e.g. [important note]{.fg style="--col: #e64173"}.
-- `.bg` class for custom background, e.g. [important note]{.bg style="--col: #e64173"}.
-
-Cross-references
-
-- `.button` class provides a Beamer-like button, e.g.
-[[Summary]{.button}](#sec-summary)
-
-
-
 ## Acknowledgments
 
+Finally, I want to deeply thank Martin and Julia who supported me along the way of this project!
+
 ## References
-
-
-
-
-
