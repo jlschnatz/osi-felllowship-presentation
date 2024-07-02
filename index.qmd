@@ -1,6 +1,6 @@
 ---
 title: Simulation-Based Publication Bias Assessement
-subtitle: OSI Fellowship Frankfurt 2024
+subtitle: OSI Fellowship Ceremony 2024
 format: clean-revealjs
 html-math-method:
   method: mathjax
@@ -9,11 +9,16 @@ author:
   - name: Luca Schnatz
     email: schnatz@psych.uni-frankfurt.de
     affiliations: Department of Psychological Methods with Interdisciplinary Focus
-date: last-modified
+header-logo: img/goethe-logo.svg
+slide-number: true
+title-slide-attributes: 
+  data-background-image: img/osi.png
+  data-background-size: 23%
+  data-background-position: 80% 60%
+filters:
+  - reveal-header
+date: 07-03-2024
 ---
-
-
-
 
 
 
@@ -89,4 +94,24 @@ quarto use template grantmcdermott/quarto-revealjs-clean-demo
 
 ## Acknowledgments
 
-![](speec_workflow.png){width="50%"}
+:::: {.columns}
+
+::: {.column width="30%"}
+
+- Test
+- Test2
+- Huhu
+
+:::
+
+::: {.column width="70%"}
+
+![](speec_workflow.png)
+
+
+:::
+
+::::
+
+
+
