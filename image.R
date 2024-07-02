@@ -57,7 +57,7 @@ pb_data |>
 ggsave(
   filename = "img/scheel_etal_2021.png", 
   plot = p, 
-  width = 5, height = 4, 
+  width = 4.5, height = 4, 
   dpi = 400,
   bg = "white"
   )

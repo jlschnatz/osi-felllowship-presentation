@@ -98,7 +98,27 @@
     code span.va { color: #111111; } /* Variable */
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -394,7 +414,7 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-image="osi.png" data-background-position="80% 60%" data-background-size="23%" class="quarto-title-block center">
+<section id="title-slide" data-background-image="img/osi.png" data-background-position="80% 60%" data-background-size="23%" class="quarto-title-block center">
   <h1 class="title">Simulation-Based Publication Bias Assessement</h1>
   <p class="subtitle">OSI Fellowship Ceremony 2024</p>
 
@@ -414,19 +434,65 @@ Luca Schnatz
 
   <p class="date">July 3, 2024</p>
 </section>
-<section id="example-slide" class="slide level2">
-<h2>Example slide</h2>
-<h3 id="this-is-a-subtitle">This is a subtitle</h3>
-<p>Here we have some text that may run over several lines of the slide frame, depending on how long it is.</p>
+<section id="exemplifying-data" class="slide level2">
+<h2>Exemplifying Data</h2>
+<h3 id="comparing-the-standard-literature-against-registered-reports">Comparing the Standard Literature against Registered Reports</h3>
+<div style="text-align:center;font-size:0.8em; color:grey;">
+<div class="quarto-figure quarto-figure-center margin-caption">
+<figure>
+<p><img data-src="img/scheel_etal_2021.png" class="margin-caption" style="width:60.0%"></p>
+<figcaption>Data from: <span class="citation" data-cites="scheel2021excess">Scheel et al. (<a href="#/acknowledgments" role="doc-biblioref" onclick="">2021</a>)</span></figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="background" class="slide level2">
+<h2>Background</h2>
+<h3 id="relevance-for-open-science">Relevance for Open Science</h3>
+<p><em>Publication bias leads to…</em></p>
 <ul>
-<li>first item
-<ul>
-<li>A sub item</li>
-</ul></li>
+<li>Inflation of meta-analytical effect sizes <span class="citation" data-cites="franco2014publication">(<a href="#/acknowledgments" role="doc-biblioref" onclick="">Franco et al., 2014</a>)</span></li>
+<li>Increased false-positive rate</li>
 </ul>
-<p>Next, we’ll brief review some theme-specific components.</p>
+<p>→ Publication bias threatens the validity of science and is a significant driver of the <strong>replication crisis</strong> in psychology <span class="citation" data-cites="munafo2017manifesto">(<a href="#/acknowledgments" role="doc-biblioref" onclick="">Munafò et al., 2017</a>)</span></p>
+</section>
+<section id="current-practices-their-limitations" class="slide level2">
+<h2>Current Practices &amp; Their Limitations</h2>
+</section>
+<section id="introducing-speec" class="slide level2">
+<h2>Introducing SPEEC</h2>
 <ul>
-<li>Note that <em>all</em> of the standard Reveal.js <a href="https://quarto.org/docs/presentations/revealjs/">features</a> can be used with this theme, even if we don’t highlight them here.</li>
+<li><strong>SPEEC</strong>: <strong>S</strong>imulation-based <strong>P</strong>ublication Bias <strong>E</strong>stimation and <strong>E</strong>ffect Size <strong>C</strong>orrection</li>
+<li>Main Idea: Explicit modelling of the generative process of publication bias in a simulation framework</li>
+</ul>
+</section>
+<section id="speec-worklow" class="slide level2">
+<h2>SPEEC Worklow</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<ul>
+<li>Test</li>
+<li>Test2</li>
+<li>Huhu</li>
+</ul>
+</div><div class="column" style="width:70%;">
+<p><img data-src="img/speec_workflow.png" class="margin-caption"></p>
+</div>
+</div>
+</section>
+<section id="preliminary-assessement-of-speec" class="slide level2">
+<h2>Preliminary Assessement of SPEEC</h2>
+</section>
+<section id="outlook" class="slide level2">
+<h2>Outlook</h2>
+</section>
+<section id="nexts-steps" class="slide level2">
+<h2>Nexts Steps</h2>
+<ul>
+<li>Account for between-study effect size heterogeneity in the simulation framework</li>
+<li>Conduct thorough simulation study to assess SPEEC</li>
+<li>Include other factors that are influencing the joint distribution of effect size and sample size (such as sample size planning, p-hacking, etc.)</li>
+<li>What I will do with the money: DGPS 2024</li>
 </ul>
 </section>
 <section id="additional-theme-classes" class="slide level2">
@@ -463,19 +529,8 @@ Luca Schnatz
 <p>… or, create a new project using the demo slide deck as a full template.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href=""></a><span class="ex">quarto</span> use template grantmcdermott/quarto-revealjs-clean-demo</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="acknowledgments" class="slide level2">
+<section id="acknowledgments" class="slide level2 smaller scrollable">
 <h2>Acknowledgments</h2>
-<div class="columns">
-<div class="column" style="width:30%;">
-<ul>
-<li>Test</li>
-<li>Test2</li>
-<li>Huhu</li>
-</ul>
-</div><div class="column" style="width:70%;">
-<p><img data-src="speec_workflow.png"></p>
-</div>
-</div>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
@@ -483,7 +538,7 @@ Luca Schnatz
 </div>
 <div class="reveal-header">
 <div class="header-logo">
-<img data-src="goethe-logo.svg">
+<img data-src="img/goethe-logo.svg">
 </div>
 <div class="sc-title">
 <p> </p>
@@ -493,6 +548,17 @@ Luca Schnatz
 </div>
 <div class="sb-title">
 <p> </p>
+</div>
+</div>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-franco2014publication" class="csl-entry" role="listitem">
+Franco, A., Malhotra, N., &amp; Simonovits, G. (2014). Publication bias in the social sciences: Unlocking the file drawer. <em>Science</em>, <em>345</em>(6203), 1502–1505.
+</div>
+<div id="ref-munafo2017manifesto" class="csl-entry" role="listitem">
+Munafò, M. R., Nosek, B. A., Bishop, D. V., Button, K. S., Chambers, C. D., Percie du Sert, N., Simonsohn, U., Wagenmakers, E.-J., Ware, J. J., &amp; Ioannidis, J. (2017). A manifesto for reproducible science. <em>Nature Human Behaviour</em>, <em>1</em>(1), 1–9.
+</div>
+<div id="ref-scheel2021excess" class="csl-entry" role="listitem">
+Scheel, A. M., Schijen, M. R., &amp; Lakens, D. (2021). An excess of positive results: Comparing the standard psychology literature with registered reports. <em>Advances in Methods and Practices in Psychological Science</em>, <em>4</em>(2), 25152459211007467.
 </div>
 </div>
 </section>

@@ -11,6 +11,10 @@ author:
     affiliations: Department of Psychological Methods with Interdisciplinary Focus
 header-logo: img/goethe-logo.svg
 slide-number: true
+fig-cap-location: margin
+cap-location: margin
+bibliography: references.bib
+csl: apa.csl
 title-slide-attributes: 
   data-background-image: img/osi.png
   data-background-size: 23%
@@ -21,22 +25,69 @@ date: 07-03-2024
 ---
 
 
+## Exemplifying Data
 
-## Example slide
+### Comparing the Standard Literature against Registered Reports
 
-### This is a subtitle
+::: {style="text-align:center;font-size:0.8em; color:grey;"}
 
-Here we have some text that may run over several lines of the slide frame,
-depending on how long it is.
+![Data from: @scheel2021excess](img/scheel_etal_2021.png){fig-align="center" width="60%" fig-alt="Data of Scheel et al. (2021) indicating that 96% of the standard literature, the first hypothesis is supported, while only 44% is supported in publication bias absent registered reports."}
 
-- first item 
-    - A sub item
+:::
 
-Next, we'll brief review some theme-specific components.
+## Background 
 
-- Note that _all_ of the standard Reveal.js
-[features](https://quarto.org/docs/presentations/revealjs/)
-can be used with this theme, even if we don't highlight them here.
+### Relevance for Open Science
+
+
+*Publication bias leads to...*
+
+- Inflation of meta-analytical effect sizes [@franco2014publication]
+- Increased false-positive rate
+
+&rarr; Publication bias threatens the validity of science and is a significant driver of the **replication crisis** in psychology [@munafo2017manifesto]
+
+## Current Practices & Their Limitations
+
+## Introducing SPEEC
+
+- **SPEEC**: **S**imulation-based **P**ublication Bias **E**stimation and **E**ffect Size **C**orrection
+- Main Idea: Explicit modelling of the generative process of publication bias in a simulation framework 
+
+
+## SPEEC Worklow
+
+:::: {.columns}
+
+::: {.column width="30%"}
+
+- Test
+- Test2
+- Huhu
+
+:::
+
+::: {.column width="70%"}
+
+![](img/speec_workflow.png)
+
+
+:::
+
+::::
+
+
+## Preliminary Assessement of SPEEC
+
+## Outlook
+
+## Nexts Steps
+
+- Account for between-study effect size heterogeneity in the simulation framework
+- Conduct thorough simulation study to assess SPEEC
+- Include other factors that are influencing the joint distribution of effect size and sample size (such as sample size planning, p-hacking, etc.)
+- What I will do with the money: DGPS 2024 
+
 
 ## Additional theme classes
 
@@ -94,24 +145,7 @@ quarto use template grantmcdermott/quarto-revealjs-clean-demo
 
 ## Acknowledgments
 
-:::: {.columns}
 
-::: {.column width="30%"}
-
-- Test
-- Test2
-- Huhu
-
-:::
-
-::: {.column width="70%"}
-
-![](img/(speec_workflow.png)
-
-
-:::
-
-::::
 
 
 
