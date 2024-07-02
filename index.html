@@ -33,71 +33,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     /* CSS for citations */
     div.csl-bib-body { }
     div.csl-entry {
@@ -441,7 +376,7 @@ Luca Schnatz
 <div class="quarto-figure quarto-figure-center margin-caption">
 <figure>
 <p><img data-src="img/scheel_etal_2021.png" class="margin-caption" style="width:60.0%"></p>
-<figcaption>Data from: <span class="citation" data-cites="scheel2021excess">Scheel et al. (<a href="#/acknowledgments" role="doc-biblioref" onclick="">2021</a>)</span></figcaption>
+<figcaption>Data from: <span class="citation" data-cites="scheel2021excess">Scheel et al. (<a href="#/references" role="doc-biblioref" onclick="">2021</a>)</span></figcaption>
 </figure>
 </div>
 </div>
@@ -451,10 +386,10 @@ Luca Schnatz
 <h3 id="relevance-for-open-science">Relevance for Open Science</h3>
 <p><em>Publication bias leads to…</em></p>
 <ul>
-<li>Inflation of meta-analytical effect sizes <span class="citation" data-cites="franco2014publication">(<a href="#/acknowledgments" role="doc-biblioref" onclick="">Franco et al., 2014</a>)</span></li>
+<li>Inflation of meta-analytical effect sizes <span class="citation" data-cites="franco2014publication">(<a href="#/references" role="doc-biblioref" onclick="">Franco et al., 2014</a>)</span></li>
 <li>Increased false-positive rate</li>
 </ul>
-<p>→ Publication bias threatens the validity of science and is a significant driver of the <strong>replication crisis</strong> in psychology <span class="citation" data-cites="munafo2017manifesto">(<a href="#/acknowledgments" role="doc-biblioref" onclick="">Munafò et al., 2017</a>)</span></p>
+<p>→ Publication bias threatens the validity of science and is a significant driver of the <strong>replication crisis</strong> in psychology <span class="citation" data-cites="munafo2017manifesto">(<a href="#/references" role="doc-biblioref" onclick="">Munafò et al., 2017</a>)</span></p>
 </section>
 <section id="current-practices-their-limitations" class="slide level2">
 <h2>Current Practices &amp; Their Limitations</h2>
@@ -469,13 +404,14 @@ Luca Schnatz
 <section id="speec-worklow" class="slide level2">
 <h2>SPEEC Worklow</h2>
 <div class="columns">
-<div class="column" style="width:30%;">
-<ul>
-<li>Test</li>
-<li>Test2</li>
-<li>Huhu</li>
-</ul>
-</div><div class="column" style="width:70%;">
+<div class="column" style="width:40%;">
+<ol type="1">
+<li>Simulate samples from joint distribution of effect size and sample size</li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+</div><div class="column" style="width:60%;">
 <p><img data-src="img/speec_workflow.png" class="margin-caption"></p>
 </div>
 </div>
@@ -485,9 +421,9 @@ Luca Schnatz
 </section>
 <section id="outlook" class="slide level2">
 <h2>Outlook</h2>
-</section>
-<section id="nexts-steps" class="slide level2">
-<h2>Nexts Steps</h2>
+<h3 id="nexts-steps">Nexts Steps</h3>
+<p>Interested in further detailes see <a href="https://raw.githubusercontent.com/jlschnatz/bachelor-thesis/master/manuscript/thesis-schnatz_submitted.pdf">thesis</a></p>
+<p><i class="fa-brands fa-github"></i></p>
 <ul>
 <li>Account for between-study effect size heterogeneity in the simulation framework</li>
 <li>Conduct thorough simulation study to assess SPEEC</li>
@@ -509,28 +445,11 @@ Luca Schnatz
 <li><code>.button</code> class provides a Beamer-like button, e.g. <a href="#/sec-summary"><span class="button">Summary</span></a></li>
 </ul>
 </section>
-<section id="want-more" class="slide level2">
-<h2>Want more?</h2>
-<h3 id="see-our-longer-demo-slides">See our longer demo slides</h3>
-<p>We’ve deliberarely kept this template lean, to get you up and running as fast as possible.</p>
-<p>We provide a separate <a href="https://github.com/grantmcdermott/quarto-revealjs-clean-demo">demo template</a>, with more examples for integrating code, tables, figures, etc.</p>
-<ul>
-<li>See the live demo slides <a href="https://grantmcdermott.com/quarto-revealjs-clean-demo/template.html">here</a>.</li>
-</ul>
-</section>
-<section id="sec-summary" class="slide level2">
-<h2>Summary</h2>
-<h3 id="a-minimalist-and-elegant-presentation-theme">A minimalist and elegant presentation theme</h3>
-<p>The Quarto reveal.js clean theme aims to be a minimalist and elegant presention theme. Here are some options to get you started:</p>
-<p>Add the theme to an existing project.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href=""></a><span class="ex">quarto</span> install extension grantmcdermott/quarto-revealjs-clean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>… or, create a new project using this slide deck as a lean template.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href=""></a><span class="ex">quarto</span> use template grantmcdermott/quarto-revealjs-clean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>… or, create a new project using the demo slide deck as a full template.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href=""></a><span class="ex">quarto</span> use template grantmcdermott/quarto-revealjs-clean-demo</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="acknowledgments" class="slide level2 smaller scrollable">
+<section id="acknowledgments" class="slide level2">
 <h2>Acknowledgments</h2>
+</section>
+<section id="references" class="slide level2 smaller scrollable">
+<h2>References</h2>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
