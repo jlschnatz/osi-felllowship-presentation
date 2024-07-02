@@ -106,7 +106,7 @@ quarto use template grantmcdermott/quarto-revealjs-clean-demo
 
 ::: {.column width="70%"}
 
-![](speec_workflow.png)
+![](img/(speec_workflow.png)
 
 
 :::
