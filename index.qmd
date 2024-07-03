@@ -165,8 +165,5 @@ General classification into:
 - [Bachelor thesis](https://raw.githubusercontent.com/jlschnatz/bachelor-thesis/master/manuscript/thesis-schnatz_submitted.pdf)
 - [Project code](https://github.com/jlschnatz/bachelor-thesis)
 
-## Acknowledgments
-
-Finally, I want to deeply thank Martin and Julia who supported me along the way of this project!
 
 ## References
