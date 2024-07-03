@@ -27,11 +27,15 @@ date: 07-03-2024
 
 ### Comparing the Standard Literature against Registered Reports
 
+::: {.fragment}
+
 Exemplifying data by @scheel2021excess
 
 ::: {style="text-align:center;font-size:0.8em; color:grey;"}
 
 ![](img/scheel_etal_2021.png){fig-align="center" width="50%" fig-alt="Data of Scheel et al. (2021) indicating that 96% of the standard literature, the first hypothesis is supported, while only 44% is supported in publication bias absent registered reports."}
+
+:::
 
 :::
 
@@ -54,7 +58,6 @@ Exemplifying data by @scheel2021excess
 - Increased false-positive rate [@kicinski2014does]
 
 &rarr; Publication bias threatens the validity of science and is a significant driver of the **replication crisis** in psychology [@munafo2017manifesto]
-
 
 ::: {.notes}
 
@@ -80,11 +83,9 @@ General classification into:
   - When publication bias is present: studies with smaller sample sizes (lower precision) need larger effect sizes to achieve statistical significance compared to studies with larger sample sizes (higher precision)
   - As a result, there are disproportionately fewer studies with low sample sizes and low effect sizes because they are statistically nonsignificant
   - And this relationship is captured via regression-based methods 
-- Methods based on p-values: Model publication bias by considering how the likelihood of a study's publication depends on its p-values
+- Methods based on *p*-values: Model publication bias by considering how the likelihood of a study's publication depends on its p-values
 
 :::
-
-
 
 ## Background
 ### Criticisms of existing Methods
@@ -96,8 +97,6 @@ General classification into:
   - Additional *p*-hacking and other QRPs
   - Limited number of individual studies included in the meta-analysis
   - Severity of publication bias
-
-
 
 ::: {.notes}
 
@@ -115,8 +114,8 @@ General classification into:
 ## Introducing SPEEC
 
 - Explicit and modeling framework to assess publication bias with ability to account for relevant discussed factors in the context of publication bias
-  - heterogeneity, 
-  - *sample size planning*, 
+  - Heterogeneity, 
+  - *Sample size planning*, 
   - *p*-hacking
 - Adaptability and flexibility in assumptions for different scenarios
 - *SPEEC*: **S**imulation-based **P**ublication Bias **E**stimation and **E**ffect Size **C**orrection &rarr; written as open source [R-package](https://github.com/jlschnatz/speec) 
@@ -164,6 +163,5 @@ General classification into:
 
 - [Bachelor thesis](https://raw.githubusercontent.com/jlschnatz/bachelor-thesis/master/manuscript/thesis-schnatz_submitted.pdf)
 - [Project code](https://github.com/jlschnatz/bachelor-thesis)
-
 
 ## References
