@@ -1,5 +1,5 @@
 ---
-title: Simulation-Based Publication Bias Assessement
+title: Simulation-Based Publication Bias Assessement in Meta-Analyses
 subtitle: _OSI Fellowship Ceremony 2024_
 format: clean-revealjs
 html-math-method:
@@ -35,6 +35,15 @@ Exemplifying data by @scheel2021excess
 
 :::
 
+::: {.notes}
+
+- To highlight the point, I want to make &rarr; here is some data from three years ago that compares standard reports against registered replication reports (in which publication bias is absent because of the publishing format)
+- I read this study last year when I began this project and was shocked by the results
+- Shows that there is a huge discrepancy in the percentage of studies supporting their first hypothesis depending on the publishing format
+- 96% of standard reports that are published support their first hypothesis, while only 44% of registered replication reports support that &rarr; indicates widespread publication bias
+
+:::
+
 ## Background 
 
 ### Relevance for Open Science
@@ -46,44 +55,94 @@ Exemplifying data by @scheel2021excess
 
 &rarr; Publication bias threatens the validity of science and is a significant driver of the **replication crisis** in psychology [@munafo2017manifesto]
 
+
+::: {.notes}
+
+- And the consequences of this widespread evident publication bias (as you may know) are very severe
+- Publication bias may lead to inflated meta-analytical effect sizes
+- Which then in return also leads to increased false-positive rate
+- In summary, we may say that publication bias threatens the validity of science -> and is a significant driver of the replication crisis in psychology
+
+:::
+
+
 ## Background
-### Existing Methods to Assess Publication Bias
+### Existing Methods to Assess Publication Bias in Meta-Analyses
 
 General classification into:
 
-- Methods based on the relationship between effect size and sample size in meta-analyses (*small-study effects*) 
+- Methods based on the relationship between effect size and sample size (*small-study effects*) 
 - Methods working with *p*-values
+
+::: {.notes}
+
+- Methods based on the relationship between effect size and sample size (also coined small-study effects)
+  - When publication bias is present: studies with smaller sample sizes (lower precision) need larger effect sizes to achieve statistical significance compared to studies with larger sample sizes (higher precision)
+  - As a result, there are disproportionately fewer studies with low sample sizes and low effect sizes because they are statistically nonsignificant
+  - And this relationship is captured via regression-based methods 
+- Methods based on p-values: Model publication bias by considering how the likelihood of a study's publication depends on its p-values
+
+:::
+
 
 
 ## Background
 ### Criticisms of existing Methods
 
-- Small-study effects methods: lack of an *explicit* model for publication bias &rarr; only indirect approach to assess publication bias
-- Publication bias is not the only factor influencing the distribution of effect size and sample size &rarr; *sample size planning*
-- Several simulation studies show that many existing methods perform poorly in realistic empirical meta-analytical scenarios: 
+- Small-study effects methods: lack of an *explicit* model for publication bias [@mcshane2016adjusting] &rarr; *indirect* approach [@harrer2021doing]
+- Publication bias not the only factor influencing the distribution of effect size and sample size &rarr; *sample size planning* [@linden2024publication]
+- Existing methods perform poorly in realistic empirical scenarios [@renkewitz2019detect; @mcshane2016adjusting; @carter2019correcting]
   - Effect size heterogeneity
   - Additional *p*-hacking and other QRPs
   - Limited number of individual studies included in the meta-analysis
   - Severity of publication bias
 
-## Introducing SPEEC
 
-&rarr; Explicit modeling framework to assess publication bias with ability to account for relevant discussed factors in the context of publication bias 
 
-::: {.incremental}
+::: {.notes}
 
-- **SPEEC**: **S**imulation-based **P**ublication Bias **E**stimation and **E**ffect Size **C**orrection
-- Main Idea
-  - Explicit modelling of the generative process of publication bias in a simulation framework 
-  - Iteratively comparing the "closeness" of the simulated joint effect size sample size distributions with the empirical meta-analytical data to estimate the parameters of the method
+- Despite the abundance of statistical methods to assess publication bias, many criticisms
+- Small-study effects methods lack and explicit model for publication bias &rarr; only use indirect approach to assess publication bias
+- Additionally, publication bias is not the only factor that influences the joint distribution of effect size and sample size &rarr; *sample size planning* &rarr; researchers planning their sample size for studies according to anticipated effect sizes &rarr; should be accounted for when modelling publication bias
+- Several simulation studies have shown that existing methods perform poorly under realistic empirical scenarios &rarr; factors influencing the performance: 
+  - effect size heterogeneity
+  - additional p-hacking or other QRPs
+  - limited number of individual studies
+  - severity of publication bias
 
 :::
 
+## Introducing SPEEC
 
-## SPEEC Worklow
+- Explicit and modeling framework to assess publication bias with ability to account for relevant discussed factors in the context of publication bias
+  - heterogeneity, 
+  - *sample size planning*, 
+  - *p*-hacking
+- Adaptability and flexibility in assumptions for different scenarios
+- *SPEEC*: **S**imulation-based **P**ublication Bias **E**stimation and **E**ffect Size **C**orrection &rarr; written as open source [R-package](https://github.com/jlschnatz/speec) 
 
-![](img/speec_workflow.png){fig-align="center"}
+::: {.notes}
 
+- Considering these limitations, an explicit modelling framework to assess publication bias with the ability to account important influencing factors in the context of publication bias that I have talked about would be valuable: effect size heterogeneity, sample size planning, *p*-hacking
+- Because as we include more and more factors to model publication bias, the distribution of effect size and sample size gets harder to describe analytically, we came up with the idea to just use simulation!
+- I called this method SPEEC, which stands for simulation-based publication biuas estimation and effect size correction &rarr; two factors
+  - Quantification of the extent of publication bias -> how much more likely statistically significant studies are to be published compared to nonsignificant studies
+  - Correction of effect sizes for the impact of publication bias
+- I have written this framework as an open-source R package (still an alpha version, will need to change a lot)
+
+:::
+
+## Flowchart of SPEEC
+
+![](img/speec_workflow.png){fig-align="center" width="110%"}
+
+::: {.notes}
+
+- Main idea: explicit modelling of the generative process of publication bias in a simulation framework 
+- Iteratively compare simulated data from publication bias model to empirical meta-analytical effect size sample size data &rarr; to quantify the closeness of the simulated and empirical data
+- Adjust parameter of the simulation framework statistical distance of the joint distributions is maximized
+
+:::
 
 ## Preliminary Assessement of SPEEC
 
@@ -97,12 +156,14 @@ General classification into:
 
 ### Nexts Steps
 
-Interested in further details see [thesis](https://raw.githubusercontent.com/jlschnatz/bachelor-thesis/master/manuscript/thesis-schnatz_submitted.pdf)
-
 - Account for between-study effect size heterogeneity in the simulation framework
-- Conduct thorough simulation study to assess SPEEC
-- Include other factors that are influencing the joint distribution of effect size and sample size (such as sample size planning, p-hacking, etc.)
-- What I will do with the money: DGPS 2024 
+- Conduct comprehensive simulation study to assess SPEEC
+- Include other factors that are influencing the joint distribution of effect size and sample size (such as sample size planning, *p*-hacking, etc.)
+
+### Interested in More Details?
+
+- [Bachelor thesis](https://raw.githubusercontent.com/jlschnatz/bachelor-thesis/master/manuscript/thesis-schnatz_submitted.pdf)
+- [Project code](https://github.com/jlschnatz/bachelor-thesis)
 
 ## Acknowledgments
 

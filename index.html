@@ -17,7 +17,7 @@
 
   <meta name="author" content="Luca Schnatz  ">
   <meta name="dcterms.date" content="2024-07-03">
-  <title>Simulation-Based Publication Bias Assessement</title>
+  <title>Simulation-Based Publication Bias Assessement in Meta-Analyses</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -353,7 +353,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Simulation-Based Publication Bias Assessement</h1>
+  <h1 class="title">Simulation-Based Publication Bias Assessement in Meta-Analyses</h1>
   <p class="subtitle"><em>OSI Fellowship Ceremony 2024</em></p>
 
 <div class="quarto-title-authors">
@@ -383,6 +383,24 @@ Luca Schnatz <a href="https://github.com/jlschnatz"><i class="fa-brands fa-githu
 </figure>
 </div>
 </div>
+<aside class="notes">
+<ul>
+<li>To highlight the point, I want to make → here is some data from three years ago that compares standard reports against registered replication reports (in which publication bias is absent because of the publishing format)</li>
+<li>I read this study last year when I began this project and was shocked by the results</li>
+<li>Shows that there is a huge discrepancy in the percentage of studies supporting their first hypothesis depending on the publishing format</li>
+<li>96% of standard reports that are published support their first hypothesis, while only 44% of registered replication reports support that → indicates widespread publication bias</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="background-1" class="slide level2">
 <h2>Background</h2>
@@ -393,23 +411,62 @@ Luca Schnatz <a href="https://github.com/jlschnatz"><i class="fa-brands fa-githu
 <li>Increased false-positive rate <span class="citation" data-cites="kicinski2014does">(<a href="#/references" role="doc-biblioref" onclick="">Kicinski, 2014</a>)</span></li>
 </ul>
 <p>→ Publication bias threatens the validity of science and is a significant driver of the <strong>replication crisis</strong> in psychology <span class="citation" data-cites="munafo2017manifesto">(<a href="#/references" role="doc-biblioref" onclick="">Munafò et al., 2017</a>)</span></p>
+<aside class="notes">
+<ul>
+<li>And the consequences of this widespread evident publication bias (as you may know) are very severe</li>
+<li>Publication bias may lead to inflated meta-analytical effect sizes</li>
+<li>Which then in return also leads to increased false-positive rate</li>
+<li>In summary, we may say that publication bias threatens the validity of science -&gt; and is a significant driver of the replication crisis in psychology</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="background-2" class="slide level2">
 <h2>Background</h2>
-<h3 id="existing-methods-to-assess-publication-bias">Existing Methods to Assess Publication Bias</h3>
+<h3 id="existing-methods-to-assess-publication-bias-in-meta-analyses">Existing Methods to Assess Publication Bias in Meta-Analyses</h3>
 <p>General classification into:</p>
 <ul>
-<li>Methods based on the relationship between effect size and sample size in meta-analyses (<em>small-study effects</em>)</li>
+<li>Methods based on the relationship between effect size and sample size (<em>small-study effects</em>)</li>
 <li>Methods working with <em>p</em>-values</li>
 </ul>
+<aside class="notes">
+<ul>
+<li>Methods based on the relationship between effect size and sample size (also coined small-study effects)
+<ul>
+<li>When publication bias is present: studies with smaller sample sizes (lower precision) need larger effect sizes to achieve statistical significance compared to studies with larger sample sizes (higher precision)</li>
+<li>As a result, there are disproportionately fewer studies with low sample sizes and low effect sizes because they are statistically nonsignificant</li>
+<li>And this relationship is captured via regression-based methods</li>
+</ul></li>
+<li>Methods based on p-values: Model publication bias by considering how the likelihood of a study’s publication depends on its p-values</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="background-3" class="slide level2">
 <h2>Background</h2>
 <h3 id="criticisms-of-existing-methods">Criticisms of existing Methods</h3>
 <ul>
-<li>Small-study effects methods: lack of an <em>explicit</em> model for publication bias → only indirect approach to assess publication bias</li>
-<li>Publication bias is not the only factor influencing the distribution of effect size and sample size → <em>sample size planning</em></li>
-<li>Several simulation studies show that many existing methods perform poorly in realistic empirical meta-analytical scenarios:
+<li>Small-study effects methods: lack of an <em>explicit</em> model for publication bias <span class="citation" data-cites="mcshane2016adjusting">(<a href="#/references" role="doc-biblioref" onclick="">McShane et al., 2016</a>)</span> → <em>indirect</em> approach <span class="citation" data-cites="harrer2021doing">(<a href="#/references" role="doc-biblioref" onclick="">Harrer et al., 2021</a>)</span></li>
+<li>Publication bias not the only factor influencing the distribution of effect size and sample size → <em>sample size planning</em> <span class="citation" data-cites="linden2024publication">(<a href="#/references" role="doc-biblioref" onclick="">Linden et al., 2024</a>)</span></li>
+<li>Existing methods perform poorly in realistic empirical scenarios <span class="citation" data-cites="renkewitz2019detect mcshane2016adjusting carter2019correcting">(<a href="#/references" role="doc-biblioref" onclick="">Carter et al., 2019</a>; <a href="#/references" role="doc-biblioref" onclick="">McShane et al., 2016</a>; <a href="#/references" role="doc-biblioref" onclick="">Renkewitz &amp; Keiner, 2019</a>)</span>
 <ul>
 <li>Effect size heterogeneity</li>
 <li>Additional <em>p</em>-hacking and other QRPs</li>
@@ -417,25 +474,87 @@ Luca Schnatz <a href="https://github.com/jlschnatz"><i class="fa-brands fa-githu
 <li>Severity of publication bias</li>
 </ul></li>
 </ul>
+<aside class="notes">
+<ul>
+<li>Despite the abundance of statistical methods to assess publication bias, many criticisms</li>
+<li>Small-study effects methods lack and explicit model for publication bias → only use indirect approach to assess publication bias</li>
+<li>Additionally, publication bias is not the only factor that influences the joint distribution of effect size and sample size → <em>sample size planning</em> → researchers planning their sample size for studies according to anticipated effect sizes → should be accounted for when modelling publication bias</li>
+<li>Several simulation studies have shown that existing methods perform poorly under realistic empirical scenarios → factors influencing the performance:
+<ul>
+<li>effect size heterogeneity</li>
+<li>additional p-hacking or other QRPs</li>
+<li>limited number of individual studies</li>
+<li>severity of publication bias</li>
+</ul></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="introducing-speec" class="slide level2">
 <h2>Introducing SPEEC</h2>
-<p>→ Explicit modeling framework to assess publication bias with ability to account for relevant discussed factors in the context of publication bias</p>
-<div>
 <ul>
-<li class="fragment"><strong>SPEEC</strong>: <strong>S</strong>imulation-based <strong>P</strong>ublication Bias <strong>E</strong>stimation and <strong>E</strong>ffect Size <strong>C</strong>orrection</li>
-<li class="fragment">Main Idea
+<li>Explicit and modeling framework to assess publication bias with ability to account for relevant discussed factors in the context of publication bias
 <ul>
-<li class="fragment">Explicit modelling of the generative process of publication bias in a simulation framework</li>
-<li class="fragment">Iteratively comparing the “closeness” of the simulated joint effect size sample size distributions with the empirical meta-analytical data to estimate the parameters of the method</li>
+<li>heterogeneity,</li>
+<li><em>sample size planning</em>,</li>
+<li><em>p</em>-hacking</li>
 </ul></li>
+<li>Adaptability and flexibility in assumptions for different scenarios</li>
+<li><em>SPEEC</em>: <strong>S</strong>imulation-based <strong>P</strong>ublication Bias <strong>E</strong>stimation and <strong>E</strong>ffect Size <strong>C</strong>orrection → written as open source <a href="https://github.com/jlschnatz/speec">R-package</a></li>
 </ul>
-</div>
+<aside class="notes">
+<ul>
+<li>Considering these limitations, an explicit modelling framework to assess publication bias with the ability to account important influencing factors in the context of publication bias that I have talked about would be valuable: effect size heterogeneity, sample size planning, <em>p</em>-hacking</li>
+<li>Because as we include more and more factors to model publication bias, the distribution of effect size and sample size gets harder to describe analytically, we came up with the idea to just use simulation!</li>
+<li>I called this method SPEEC, which stands for simulation-based publication biuas estimation and effect size correction → two factors
+<ul>
+<li>Quantification of the extent of publication bias -&gt; how much more likely statistically significant studies are to be published compared to nonsignificant studies</li>
+<li>Correction of effect sizes for the impact of publication bias</li>
+</ul></li>
+<li>I have written this framework as an open-source R package (still an alpha version, will need to change a lot)</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="speec-worklow" class="slide level2">
-<h2>SPEEC Worklow</h2>
+<section id="flowchart-of-speec" class="slide level2">
+<h2>Flowchart of SPEEC</h2>
 
-<img data-src="img/speec_workflow.png" class="margin-caption quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="img/speec_workflow.png" class="margin-caption quarto-figure quarto-figure-center r-stretch" style="width:110.0%"><aside class="notes">
+<ul>
+<li>Main idea: explicit modelling of the generative process of publication bias in a simulation framework</li>
+<li>Iteratively compare simulated data from publication bias model to empirical meta-analytical effect size sample size data → to quantify the closeness of the simulated and empirical data</li>
+<li>Adjust parameter of the simulation framework statistical distance of the joint distributions is maximized</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="preliminary-assessement-of-speec" class="slide level2">
 <h2>Preliminary Assessement of SPEEC</h2>
 <ul>
@@ -451,12 +570,15 @@ Luca Schnatz <a href="https://github.com/jlschnatz"><i class="fa-brands fa-githu
 <section id="outlook" class="slide level2">
 <h2>Outlook</h2>
 <h3 id="nexts-steps">Nexts Steps</h3>
-<p>Interested in further details see <a href="https://raw.githubusercontent.com/jlschnatz/bachelor-thesis/master/manuscript/thesis-schnatz_submitted.pdf">thesis</a></p>
 <ul>
 <li>Account for between-study effect size heterogeneity in the simulation framework</li>
-<li>Conduct thorough simulation study to assess SPEEC</li>
-<li>Include other factors that are influencing the joint distribution of effect size and sample size (such as sample size planning, p-hacking, etc.)</li>
-<li>What I will do with the money: DGPS 2024</li>
+<li>Conduct comprehensive simulation study to assess SPEEC</li>
+<li>Include other factors that are influencing the joint distribution of effect size and sample size (such as sample size planning, <em>p</em>-hacking, etc.)</li>
+</ul>
+<h3 id="interested-in-more-details">Interested in More Details?</h3>
+<ul>
+<li><a href="https://raw.githubusercontent.com/jlschnatz/bachelor-thesis/master/manuscript/thesis-schnatz_submitted.pdf">Bachelor thesis</a></li>
+<li><a href="https://github.com/jlschnatz/bachelor-thesis">Project code</a></li>
 </ul>
 </section>
 <section id="acknowledgments" class="slide level2">
@@ -485,8 +607,14 @@ Luca Schnatz <a href="https://github.com/jlschnatz"><i class="fa-brands fa-githu
 </div>
 </div>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-carter2019correcting" class="csl-entry" role="listitem">
+Carter, E. C., Schönbrodt, F. D., Gervais, W. M., &amp; Hilgard, J. (2019). Correcting for bias in psychology: A comparison of meta-analytic methods. <em>Advances in Methods and Practices in Psychological Science</em>, <em>2</em>(2), 115–144.
+</div>
 <div id="ref-franco2014publication" class="csl-entry" role="listitem">
 Franco, A., Malhotra, N., &amp; Simonovits, G. (2014). Publication bias in the social sciences: Unlocking the file drawer. <em>Science</em>, <em>345</em>(6203), 1502–1505.
+</div>
+<div id="ref-harrer2021doing" class="csl-entry" role="listitem">
+Harrer, M., Cuijpers, P., Furukawa, T., &amp; Ebert, D. (2021). <em>Doing meta-analysis with r: A hands-on guide</em>. Chapman; Hall/CRC.
 </div>
 <div id="ref-kicinski2014does" class="csl-entry" role="listitem">
 Kicinski, M. (2014). How does under-reporting of negative and inconclusive results affect the false-positive rate in meta-analysis? A simulation study. <em>BMJ Open</em>, <em>4</em>(8), e004831.
@@ -494,8 +622,17 @@ Kicinski, M. (2014). How does under-reporting of negative and inconclusive resul
 <div id="ref-linden2021heterogeneity" class="csl-entry" role="listitem">
 Linden, A. H., &amp; Hönekopp, J. (2021). Heterogeneity of research results: A new perspective from which to assess and promote progress in psychological science. <em>Perspectives on Psychological Science</em>, <em>16</em>(2), 358–376.
 </div>
+<div id="ref-linden2024publication" class="csl-entry" role="listitem">
+Linden, A. H., Pollet, T. V., &amp; Hönekopp, J. (2024). Publication bias in psychology: A closer look at the correlation between sample size and effect size. <em>Plos One</em>, <em>19</em>(2), e0297075.
+</div>
+<div id="ref-mcshane2016adjusting" class="csl-entry" role="listitem">
+McShane, B. B., Böckenholt, U., &amp; Hansen, K. T. (2016). Adjusting for publication bias in meta-analysis: An evaluation of selection methods and some cautionary notes. <em>Perspectives on Psychological Science</em>, <em>11</em>(5), 730–749.
+</div>
 <div id="ref-munafo2017manifesto" class="csl-entry" role="listitem">
 Munafò, M. R., Nosek, B. A., Bishop, D. V., Button, K. S., Chambers, C. D., Percie du Sert, N., Simonsohn, U., Wagenmakers, E.-J., Ware, J. J., &amp; Ioannidis, J. (2017). A manifesto for reproducible science. <em>Nature Human Behaviour</em>, <em>1</em>(1), 1–9.
+</div>
+<div id="ref-renkewitz2019detect" class="csl-entry" role="listitem">
+Renkewitz, F., &amp; Keiner, M. (2019). How to detect publication bias in psychological research. <em>Zeitschrift f<span>ü</span>r Psychologie</em>.
 </div>
 <div id="ref-scheel2021excess" class="csl-entry" role="listitem">
 Scheel, A. M., Schijen, M. R., &amp; Lakens, D. (2021). An excess of positive results: Comparing the standard psychology literature with registered reports. <em>Advances in Methods and Practices in Psychological Science</em>, <em>4</em>(2), 25152459211007467.
